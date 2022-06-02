@@ -22,4 +22,35 @@ public class CalculatorController {
         return a*b;
     }
 
+    @RequestMapping("/divide")
+    public int divide(
+            @RequestParam int a,
+            @RequestParam int b){
+        return a/b;
+    }
+
+    @RequestMapping("/absoluteValue")
+    public int absoluteValue(
+            @RequestParam int a){
+        if(a >= 0){
+            return a;
+        }else{
+            return a*-1;
+        }
+
+    }
+
+    @RequestMapping("exp")
+    public int exp(
+            @RequestParam int a,
+            @RequestParam int b){
+        int temp = a;
+        for(int i = 1; i < b; i++){
+            temp = temp*a;
+        }
+        return temp;
+    }
+
+
+
 }
